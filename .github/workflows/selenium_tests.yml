@@ -1,0 +1,27 @@
+name: Chromium 56 and Selenium Integration Testing
+
+on: [push]
+
+jobs:
+  selenium_job:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Running the Chromium 56 container
+      uses: docker://dperson/chromium:56
+      with:
+        args: |
+          /usr/bin/chromium-browser --version  # check version
+
+          # Install Python y pip
+          apt-get update
+          apt-get install -y python3 python3-pip
+
+          # Install dependencies.
+          pip3 install -r requirements.txt
+
+          # Execute integration tests with selenium.
+          pytest -v --html=results/report.html
