@@ -3,6 +3,7 @@
 
 # Python
 venv/*
+env/*
 *.pyc
 *.spec
 
