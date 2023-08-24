@@ -16,12 +16,12 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 444889
+          chrome-version: 449806
         id: setup-chrome
       - run: |
           echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
