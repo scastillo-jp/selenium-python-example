@@ -22,7 +22,7 @@ jobs:
       - name: Dependencies for bentobox (python)
         timeout-minutes: 10
         run: |
-          apt-get install libgtk2.0-0
+          sudo apt-get install libgtk2.0-0
 
       - uses: browser-actions/setup-chrome@v1
         with:
