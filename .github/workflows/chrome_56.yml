@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup Chrome 56
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: 56.0
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: beta
+        id: setup-chrome
+      - run: |
+          echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+          ${{ steps.setup-chrome.outputs.chrome-path }} --version
