@@ -1,0 +1,25 @@
+# This workflow is a convenient way to run flaky tests.  Go down to the
+# "Run tests" step to read about how to add tests to the TESTS array.
+
+# The built-in `secrets.GITHUB_TOKEN` token is limited in what it can do so a personal
+# access token is used in certain situations.  e.g. Accessing another repository or
+# having a workflow trigger another workflow.
+
+name: Test (QA Flaky)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Chrome 56
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: 433081
