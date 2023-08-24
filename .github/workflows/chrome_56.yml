@@ -22,4 +22,4 @@ jobs:
     - name: Setup Chrome 56
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: 433081
+        chrome-version: 56.0
