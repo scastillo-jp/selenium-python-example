@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 457074
+          chrome-version: 454781
         id: setup-chrome
       - run: |
           echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
