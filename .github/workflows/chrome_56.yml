@@ -48,6 +48,4 @@ jobs:
         run: pip install -r requirements.txt
       
       - name: Ejecutar pruebas de integración
-        run: |
-          cd tests
-          python tests/base_test.py
+        run: python tests/base_test.py
