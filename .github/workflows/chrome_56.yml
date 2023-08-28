@@ -46,7 +46,6 @@ jobs:
       
       - name: Instalar dependencias
         run: |
-          cd selenium-python-example
           pip3 install -r requirements.txt
       
       - name: Ejecutar pruebas de integración
