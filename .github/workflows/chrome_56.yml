@@ -45,10 +45,9 @@ jobs:
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
       
       - name: Instalar dependencias
-        run: |
-          pip3 install -r requirements.txt
+        run: pip install -r requirements.txt
       
       - name: Ejecutar pruebas de integración
         run: |
-          de tests
+          cd tests
           python tests/base_test.py
