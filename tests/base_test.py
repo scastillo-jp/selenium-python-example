@@ -37,7 +37,7 @@ class BaseTest:
                 options.add_argument('--no-sandbox')
                 options.add_argument('--disable-gpu')
                 options.add_argument('--window-size=1920,1080')
-            self.driver = webdriver.Chrome(service=ServiceChrome(ChromeDriverManager().install()), options=options)
+            self.driver = webdriver.Chrome(options=options)
         elif config()['browser'] == 'firefox':
             options = webdriver.FirefoxOptions()
             if config()['headless']:
