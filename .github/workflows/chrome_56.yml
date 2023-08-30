@@ -44,6 +44,15 @@ jobs:
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
       
+      - name: Print chrome binary location
+        run: which google-chrome
+
+      - name: Print chromium binary location
+        run: which chromium
+    
+      - name: Print chromium-browser binary location
+        run: which chromium-browser
+
       - name: Instalar dependencias
         run: pip install -r requirements.txt
       

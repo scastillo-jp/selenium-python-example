@@ -2,7 +2,7 @@
 /results/
 
 # Python
-venv/*
+.venv/*
 *.pyc
 *.spec
 
