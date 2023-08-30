@@ -29,7 +29,7 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 429280
-          chrome-path: /usr/local/bin/chromium-browser/
+          chrome-path: /usr/local/bin/custom-chromium-browser/
         id: setup-chrome
       - run: |
           echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
