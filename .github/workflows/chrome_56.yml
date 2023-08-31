@@ -41,7 +41,7 @@ jobs:
           chromedriver-version: '2.28'
       - name: Print chromedriver path
         run: |
-          echo $RUNNER_TEMP/nanasess/setup-chromedriver
+          echo $RUNNER_TEMP/nanasess/setup-chromedriver --version
 
       - run: |
           export DISPLAY=:99
