@@ -39,6 +39,9 @@ jobs:
         with:
           # Optional: do not specify to match Chrome's version
           chromedriver-version: '2.28'
+      - name: Print chromedriver path
+        run: |
+          echo "Chromedriver is installed at ${{ env.CHROMEDRIVER_PATH }}"
 
       - run: |
           export DISPLAY=:99
