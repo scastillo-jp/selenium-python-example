@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service as ServiceChrome
 from selenium.webdriver.firefox.service import Service as ServiceFirefox
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 os.environ['WDM_LOG_LEVEL'] = '0'
@@ -38,6 +38,7 @@ class BaseTest:
                 options.add_argument('--disable-gpu')
                 options.add_argument('--window-size=1920,1080')
             
+            options.add_argument('--no-sandbox')
             options.binary_location = '/usr/bin/chromium-browser'
             capabilities = options.to_capabilities()
             self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
