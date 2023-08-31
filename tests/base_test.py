@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service as ServiceChrome
 from selenium.webdriver.firefox.service import Service as ServiceFirefox
-# from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
 os.environ['WDM_LOG_LEVEL'] = '0'
@@ -41,7 +41,8 @@ class BaseTest:
             options.add_argument('--no-sandbox')
             options.binary_location = '/usr/bin/chromium-browser'
             capabilities = options.to_capabilities()
-            self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
+            driver_service = ServiceChrome(ChromeDriverManager(driver_version=2.28).install())
+            self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities, service_args=driver_service)
         elif config()['browser'] == 'firefox':
             options = webdriver.FirefoxOptions()
             if config()['headless']:
