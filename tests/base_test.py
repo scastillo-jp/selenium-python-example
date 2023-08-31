@@ -38,6 +38,7 @@ class BaseTest:
                 options.add_argument('--disable-gpu')
                 options.add_argument('--window-size=1920,1080')
             
+            options.binary_location = '/usr/bin/chromium-browser'
             capabilities = options.to_capabilities()
             self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
         elif config()['browser'] == 'firefox':
