@@ -54,7 +54,7 @@ class BaseTest:
             raise Exception("Incorrect Browser")
 
         self.driver.maximize_window()
-        self.wait = WebDriverWait(self.driver, timeout='15')
+        self.wait = WebDriverWait(self.driver, "15")
         yield self.wait, self.driver
 
         if self.driver is not None:
